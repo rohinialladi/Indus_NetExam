@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Userlogin</title>
+    <!-- <link rel="stylesheet" href="login.css"> -->
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: bold;
+    
+  }
+  body{
+    background-color: #f2f9f9;
+  }
+  .container{
+    position:absolute;
+    top:10%;
+  display:flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: antiquewhite;
+    max-width: 350px;
+    padding:30px; border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 13px rgba(0, 0, 0, 0.2);
+    left:450px;
+    top:20px;
+  
+  }
+  
+  .container .myform h2{
+    color:orangered;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    font-weight: bold;
+    text-align: center;
+   
+    
+  }
+  
+  input[type="text"],
+    input[type="password"] {
+      padding: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+  
+  
+  button {
+      padding: 6px;
+      border-radius: 5px;
+      border: none;
+      background-color: orangered;
+      color: black;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      padding: 8px 20px 7px 8px;
+    justify-content: center;
+    font-weight: bold;
+    
+     
+    }
+  
+    button:hover {
+      background-color: #e92020;
+  
+    } 
+  
+  .image img{
+  
+  padding-left: 10px;
+  
+  }
+  .helo a{
+    color:black;
+  }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="myform">
+           <form id="userDetailsForm" action="http://localhost:8080/submit-form" method="POST" onsubmit="validateForm(event)"></form>
+                <h2> User Login</h2>
+              
+                Name<br>
+                <input type="text"  name="UserId" required minlength="3" maxlength="10">
+                
+    
+              Email<br>
+                <input type="password"  name="password"  required minlength="5" maxlength="8">
+                
+               Contact Number<br>
+                <input type="password"  ngModel required minlength="5" maxlength="10">
+                
+                
+                <button input type="submit" onclick="alert('Submitted')"  value="SUBMIT">Submit</button>
+            
+            
+            </form>
+        </div>
+        <div class="image">
+            
+            <img src="cus.png" alt="image not found" style="width:110%">
+        </div>
+    </div>
+    
+    <div class="helo">
+    <a href="entries.html" target="_blank">View Submitted Entries</a></div>
+    <script src="script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!-- entries.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted Entries</title>
+    <style>
+        /* Add some basic styling for better presentation */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Submitted Entries</h1>
+    <ul id="entriesList"></ul>
+
+    <script>
+        // Fetch submitted entries from the server and display them
+        fetch('http://localhost:8080/submitted-entries')
+            .then(response => response.json())
+            .then(entries => {
+                const entriesList = document.getElementById('entriesList');
+                entries.forEach(entry => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Name: ${entry.name}, Email: ${entry.email}, Contact Number: ${entry.contactNumber}`;
+                    entriesList.appendChild(listItem);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching submitted entries:', error);
+            });
+    </script>
+</body>
+</html>
